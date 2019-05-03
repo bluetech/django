@@ -162,8 +162,6 @@ def lazy(func, *resultclasses):
             return hash(self.__cast())
 
         def __mod__(self, rhs):
-            if self._delegate_text:
-                return str(self) % rhs
             return self.__cast() % rhs
 
         def __deepcopy__(self, memo):
